@@ -8,7 +8,8 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/',(req,res)=>{
-    const data = axios.get("'https://jsonplaceholder.typicode.com/todos/1'")
+    const data = axios.get("https://jsonplaceholder.typicode.com/posts")
+    console.log("data",data)
     res.send("lele bhaii data",data);
 })
 
