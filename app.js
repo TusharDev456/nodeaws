@@ -7,10 +7,14 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
-app.get('/',(req,res)=>{
-    const data = axios.get("https://jsonplaceholder.typicode.com/posts")
-    console.log("data",data)
-    res.send("lele bhaii data",data);
+app.get('/',async(req,res)=>{
+    try {
+        const response = await axios.get("http://jsonplaceholder.typicode.com/posts");
+        res.send(response.data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        res.status(500).send("Error fetching data");
+    }
 })
 
 app.listen(PORT,()=>{
