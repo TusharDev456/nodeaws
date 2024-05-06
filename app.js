@@ -4,7 +4,7 @@ const PORT = 4000;
 const app = express();
 
 app.get('/',(req,res)=>{
-    res.send("Hello Neeraj Sir Gaad Doge!,haa lelo meri!!") 
+    res.send("Haa jii Or CI/CD implement kr diya") 
     // res.send("haa lelo meri!!") 
 })
 
